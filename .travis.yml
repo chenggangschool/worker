@@ -1,4 +1,4 @@
-sudo: required
+
 
 language: csharp
 mono: none
@@ -22,11 +22,11 @@ script:
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
-  - docker build -t "davecss/worker:latest" -t "davecss/worker:1.0.$TRAVIS_BUILD_NUMBER" .
+  - docker build -t "chenggangschool/worker:latest" -t "chenggangschool/worker:1.0.$TRAVIS_BUILD_NUMBER" .
 
 deploy:
   provider: script
   skip_cleanup: true
-  script: docker push davecss/worker
+  script: docker push chenggangschool/worker
   on:
     branch: master
